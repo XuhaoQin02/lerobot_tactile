@@ -177,3 +177,5 @@ outputs/
 *.urdf
 *.xml
 *.part
+src/lerobot/cameras/tactile_cam/tactile_data/depth.npy
+src/lerobot/cameras/tactile_cam/tactile_data/normals.npy
