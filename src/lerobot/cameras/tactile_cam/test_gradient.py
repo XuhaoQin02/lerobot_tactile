@@ -269,7 +269,7 @@ class GradientProcessor:
                 print("=" * 50)
         
         # 计算法向量（放大梯度使法向量变化更明显）
-        grad_scale = 1.0  # 放大系数，可调整
+        grad_scale = 5.0  # 放大系数，可调整
         gx_scaled = grad_x * grad_scale
         gy_scaled = grad_y * grad_scale
         
@@ -404,10 +404,10 @@ def main():
                     # 手动保存
                     if raw_depth is not None:
                         timestamp = int(cv2.getTickCount())
-                        np.save(os.path.join(save_dir, f"depth_grad_{timestamp}.npy"), raw_depth)
-                        np.save(os.path.join(save_dir, f"normal_grad_{timestamp}.npy"), raw_normals)
-                        np.save(os.path.join(save_dir, f"gradient_{timestamp}.npy"), 
-                               np.stack([grad_x, grad_y], axis=-1))
+                        # np.save(os.path.join(save_dir, f"depth_grad_{timestamp}.npy"), raw_depth)
+                        # np.save(os.path.join(save_dir, f"normal_grad_{timestamp}.npy"), raw_normals)
+                        # np.save(os.path.join(save_dir, f"gradient_{timestamp}.npy"), 
+                        #        np.stack([grad_x, grad_y], axis=-1))
                         print(f"[INFO] 数据已保存: depth_grad_{timestamp}.npy")
                     
                 elif key == ord('q'):
